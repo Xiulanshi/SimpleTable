@@ -31,9 +31,16 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
         // dequeueReusableCellWithIdentifier method is used to retrieving a reusable table cell from the queue with the specified cell identifier
         // Configure the cell...
         cell.textLabel?.text = restaurantNames[indexPath.row]
-        cell.imageView?.image = UIImage(named: "restaurant")
+        cell.imageView?.image = UIImage(named: restaurantNames[indexPath.row].lowercaseString)
         return cell
     }
+    
+    
+    override func prefersStatusBarHidden() -> Bool {
+        return true
+    }
+    
+    
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
